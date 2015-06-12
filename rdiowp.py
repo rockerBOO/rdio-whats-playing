@@ -6,9 +6,20 @@ import os
 from pprint import pprint
 import json
 from StringIO import StringIO
+import argparse
 
-user = 'rockerBOO'
-whats_playing_file = 'whats_playing.txt'
+parser = argparse.ArgumentParser()
+parser.add_argument("username", help="User name on Rdio")
+parser.add_argument("--file", default='whats_playing.txt', help="File to store what's playing")
+
+args = parser.parse_args()
+
+user = args.username
+whats_playing_file = args.file
+
+# user = 'rockerBOO'
+# whats_playing_file = 'whats_playing.txt'
+sample_data_json = 'sample-user-data.json'
 
 # Need to set the enviromental variables
 # CONSUMER_KEY = os.environ['RDIO_CONSUMER_KEY']
@@ -43,7 +54,7 @@ def write_whats_playing(last_played):
 	except IOError:
 		pass
 
-data = open('sample-user-data.json')
+data = open(sample_data_json)
 
 json_data = json.load(data)
 

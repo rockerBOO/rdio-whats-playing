@@ -1,4 +1,4 @@
-# Whats Playing in Python
+# Whats Playing in Rdio
 Simple script to get whats playing on Rdio. For use in OBS, or other streaming services, or reading on a IoT device.
 
 Vanity Name is found in the url to your profile
